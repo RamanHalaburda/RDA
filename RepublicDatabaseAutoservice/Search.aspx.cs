@@ -16,7 +16,7 @@ namespace RepublicDatabaseAutoservice
         private string selectedBrand;
         private string selectedRegion;
         private string selectedCategory;
-
+        /*
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -113,6 +113,6 @@ namespace RepublicDatabaseAutoservice
         {
             DataTable dt = CallStoredProcedure.spGetStoByAgeAndMakerCountry(TextBox9.Text, TextBox10.Text);
             GenerateHTML(dt);
-        }
+        }*/
     }
 }

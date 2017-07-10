@@ -166,6 +166,7 @@
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\FilterStyle.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\TableStyle.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
