@@ -86,6 +86,54 @@ namespace RepublicDatabaseAutoservice.Logic
             _ddl.SelectedIndex = 0;
         }
 
+        public static void LoadDistricts(DropDownList _ddl)
+        {
+            DataTable regions = new DataTable();
+            string constr = ConfigurationManager.ConnectionStrings[connStr].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(constr))
+            {
+                try
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter("EXEC GetAllDistricts", conn);
+                    adapter.Fill(regions);
+
+                    _ddl.DataSource = regions;
+                    _ddl.DataTextField = "district_title";
+                    _ddl.DataValueField = "district_id";
+                    _ddl.DataBind();
+                }
+                catch (Exception) { }
+            }
+
+            _ddl.Items.Insert(0, new ListItem("<Выберите район>", "0"));
+            _ddl.SelectedIndex = 0;
+        }
+
+        public static void LoadCities(DropDownList _ddl)
+        {
+            DataTable regions = new DataTable();
+            string constr = ConfigurationManager.ConnectionStrings[connStr].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(constr))
+            {
+                try
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter("EXEC GetAllCities", conn);
+                    adapter.Fill(regions);
+
+                    _ddl.DataSource = regions;
+                    _ddl.DataTextField = "city_title";
+                    _ddl.DataValueField = "city_id";
+                    _ddl.DataBind();
+                }
+                catch (Exception) { }
+            }
+
+            _ddl.Items.Insert(0, new ListItem("<Выберите город>", "0"));
+            _ddl.SelectedIndex = 0;
+        }
+
         public static void LoadCategories(DropDownList _ddl)
         {
             DataTable categories = new DataTable();
@@ -107,6 +155,78 @@ namespace RepublicDatabaseAutoservice.Logic
             }
 
             _ddl.Items.Insert(0, new ListItem("<Выберите категорию работ>", "0"));
+            _ddl.SelectedIndex = 0;
+        }
+
+        public static void ReduceDistricts(DropDownList _ddl, string _region)
+        {
+            DataTable categories = new DataTable();
+            string constr = ConfigurationManager.ConnectionStrings[connStr].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(constr))
+            {
+                try
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter("EXEC GetDistrictsByRegion '" + _region + "'", conn);
+                    adapter.Fill(categories);
+
+                    _ddl.DataSource = categories;
+                    _ddl.DataTextField = "district_title";
+                    _ddl.DataValueField = "district_id";
+                    _ddl.DataBind();
+                }
+                catch (Exception) { }
+            }
+
+            _ddl.Items.Insert(0, new ListItem("<Выберите район>", "0"));
+            _ddl.SelectedIndex = 0;
+        }
+
+        public static void ReduceCities(DropDownList _ddl, string _district)
+        {
+            DataTable categories = new DataTable();
+            string constr = ConfigurationManager.ConnectionStrings[connStr].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(constr))
+            {
+                try
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter("EXEC GetCitiesByDistrict '" + _district + "'", conn);
+                    adapter.Fill(categories);
+
+                    _ddl.DataSource = categories;
+                    _ddl.DataTextField = "city_title";
+                    _ddl.DataValueField = "city_id";
+                    _ddl.DataBind();
+                }
+                catch (Exception) { }
+            }
+
+            _ddl.Items.Insert(0, new ListItem("<Выберите город>", "0"));
+            _ddl.SelectedIndex = 0;
+        }
+
+        public static void ReduceModels(DropDownList _ddl, string _brand)
+        {
+            DataTable categories = new DataTable();
+            string constr = ConfigurationManager.ConnectionStrings[connStr].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(constr))
+            {
+                try
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter("EXEC GetModelsByBrand '" + _brand + "'", conn);
+                    adapter.Fill(categories);
+
+                    _ddl.DataSource = categories;
+                    _ddl.DataTextField = "model_title";
+                    _ddl.DataValueField = "model_id";
+                    _ddl.DataBind();
+                }
+                catch (Exception) { }
+            }
+
+            _ddl.Items.Insert(0, new ListItem("<Выберите модель>", "0"));
             _ddl.SelectedIndex = 0;
         }
     }

@@ -16,18 +16,21 @@ namespace RepublicDatabaseAutoservice
         private string selectedBrand;
         private string selectedRegion;
         private string selectedCategory;
-        /*
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                FillFields.LoadBrands(DropDownList1);
-                FillFields.LoadRegions(DropDownList2);
-                FillFields.LoadCategories(DropDownList3);
-                FillFields.LoadBrands(DropDownList4);
-                FillFields.LoadModels(DropDownList5);
+                FillFields.LoadBrands(ddlBrand);
+                FillFields.LoadRegions(ddlRegion);
+                FillFields.LoadCategories(ddlCategory);
+                FillFields.LoadModels(ddlModel);
+                FillFields.LoadCities(ddlCity);
+                FillFields.LoadDistricts(ddlDistrict);
             }
         }
+
+
 
         private void GenerateHTML(DataTable _dt)
         {
@@ -58,6 +61,45 @@ namespace RepublicDatabaseAutoservice
             PlaceHolder1.Controls.Add(new Literal { Text = html.ToString() });
         }
 
+        protected void ddlRegion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlRegion.SelectedIndex == 0)
+            {
+                ddlDistrict.SelectedIndex = 0;
+                ddlCity.SelectedIndex = 0;
+            }
+            else
+            {
+                FillFields.ReduceDistricts(ddlDistrict, ddlRegion.SelectedItem.Text);
+                ddlDistrict.SelectedIndex = 0;
+                ddlCity.SelectedIndex = 0;
+            }
+        }
+
+        protected void ddlDistrict_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlDistrict.SelectedIndex == 0)
+            {
+                ddlCity.SelectedIndex = 0;
+            }
+            else
+            {
+                FillFields.ReduceCities(ddlCity, ddlDistrict.SelectedItem.Text);
+            }
+        }
+
+        protected void ddlBrand_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlBrand.SelectedIndex == 0)
+            {
+                ddlModel.SelectedIndex = 0;
+            }
+            else
+            {
+                FillFields.ReduceModels(ddlModel, ddlBrand.SelectedItem.Text);
+            }
+        }
+        /*
         protected void Button1_Click(object sender, EventArgs e) { }
 
         protected void ddl2_SelectedIndexChanged(object sender, EventArgs e)

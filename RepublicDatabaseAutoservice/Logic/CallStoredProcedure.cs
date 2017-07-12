@@ -35,6 +35,12 @@ namespace RepublicDatabaseAutoservice.Logic
             }
         }
 
+        public static DataTable spGetSto(string _reg, string _distr, string _city, string _br, string _mo, string _cat, string _age, string _country)
+        {
+            string query = String.Concat("EXEC GetSTO '", _reg, "','", _distr, "','", _city, "','", _br, "','", _mo, "','", _cat, "',", _age, ",'", _country, "'");
+            return CallSP(query);
+        }
+
         public static DataTable spGetStoByRegion(string _param)
         {
             string query = String.Concat("EXEC GetSTOByRegion '", _param, "'");

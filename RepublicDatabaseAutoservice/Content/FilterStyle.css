@@ -4,31 +4,36 @@
     border-radius: 3px;
     padding: 10px;
     height: initial;
+    /*margin: 0 auto;*/
 }
 
 .fblocks {
-    width: 23%;
+    height: 90px;
     display: inline-block;
     border: 1px solid white; 
     border-color: #b58900;
-    border-radius: 3px; 
-    margin-left: 5px;
+    border-radius: 3px;
+    margin-left: 6px;
     margin-right: 5px;
     vertical-align:top;
     padding: 5px;
+    height: 80px;
+    width: 23.8%;
 }
 
 .flabel {
     display:block;
 	float:left;
-	width:80px;
+	width:85px;
 }
 
 .fields {
-    width: 150px;
+    width: 175px;
+    margin-bottom: 2px;
 }
 
-#btnSearch {
-    align-items: center;
-    width: 90%;
+.btnsearch {
+    width: 99%;
+    margin-left: 5px;
+    margin-top: 5px;
 }
