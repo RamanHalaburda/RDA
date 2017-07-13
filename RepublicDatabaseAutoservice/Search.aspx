@@ -46,14 +46,10 @@
         </div>
 
         <br>
-        <asp:Button ID="btnSearch" runat="server" Text="Поиск" CssClass="btnsearch" />
+        <asp:Button ID="btnSearch" runat="server" Text="Поиск" CssClass="btnsearch" OnClick="btnSearch_Click" />
     </div>
 
     <p>
         <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
     </p>
-
-    
-
-    
 </asp:Content>

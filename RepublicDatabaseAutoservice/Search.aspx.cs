@@ -12,11 +12,7 @@ using RepublicDatabaseAutoservice.Logic;
 namespace RepublicDatabaseAutoservice
 {
     public partial class Search : System.Web.UI.Page
-    {
-        private string selectedBrand;
-        private string selectedRegion;
-        private string selectedCategory;
-        
+    {        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -27,10 +23,9 @@ namespace RepublicDatabaseAutoservice
                 FillFields.LoadModels(ddlModel);
                 FillFields.LoadCities(ddlCity);
                 FillFields.LoadDistricts(ddlDistrict);
+                FillFields.LoadCountries(ddlCountry);
             }
         }
-
-
 
         private void GenerateHTML(DataTable _dt)
         {
@@ -98,6 +93,24 @@ namespace RepublicDatabaseAutoservice
             {
                 FillFields.ReduceModels(ddlModel, ddlBrand.SelectedItem.Text);
             }
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            string region = ddlRegion.SelectedItem.Text;
+            string district = ddlDistrict.SelectedItem.Text;
+            string city = ddlCity.SelectedItem.Text;
+
+            string brand = ddlBrand.SelectedItem.Text;
+            string model = ddlModel.SelectedItem.Text;
+
+            string category = ddlCategory.SelectedItem.Text;
+
+            string age = tbAge.Text;
+            string country = ddlCountry.SelectedItem.Text;
+
+            DataTable dt = CallStoredProcedure.spGetSto(region, district, city, brand, model, category, age, country);
+            GenerateHTML(dt);
         }
         /*
         protected void Button1_Click(object sender, EventArgs e) { }

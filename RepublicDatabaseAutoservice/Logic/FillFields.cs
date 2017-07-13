@@ -134,6 +134,30 @@ namespace RepublicDatabaseAutoservice.Logic
             _ddl.SelectedIndex = 0;
         }
 
+        public static void LoadCountries(DropDownList _ddl)
+        {
+            DataTable regions = new DataTable();
+            string constr = ConfigurationManager.ConnectionStrings[connStr].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(constr))
+            {
+                try
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter("EXEC GetAllCountries", conn);
+                    adapter.Fill(regions);
+
+                    _ddl.DataSource = regions;
+                    _ddl.DataTextField = "bymaker_name";
+                    _ddl.DataValueField = "bymaker_id";
+                    _ddl.DataBind();
+                }
+                catch (Exception) { }
+            }
+
+            _ddl.Items.Insert(0, new ListItem("<Выберите страну>", "0"));
+            _ddl.SelectedIndex = 0;
+        }
+
         public static void LoadCategories(DropDownList _ddl)
         {
             DataTable categories = new DataTable();

@@ -37,7 +37,17 @@ namespace RepublicDatabaseAutoservice.Logic
 
         public static DataTable spGetSto(string _reg, string _distr, string _city, string _br, string _mo, string _cat, string _age, string _country)
         {
-            string query = String.Concat("EXEC GetSTO '", _reg, "','", _distr, "','", _city, "','", _br, "','", _mo, "','", _cat, "',", _age, ",'", _country, "'");
+            string NULL = "NULL";
+            if (_reg.FirstOrDefault() == '<') _reg = NULL; else _reg = String.Concat("'", _reg, "'");
+            if (_distr.FirstOrDefault() == '<') _distr = NULL; else _distr = String.Concat("'", _distr, "'");
+            if (_city.FirstOrDefault() == '<') _city = NULL; else _city = String.Concat("'", _city, "'");
+            if (_br.FirstOrDefault() == '<') _br = NULL; else _br = String.Concat("'", _br, "'");
+            if (_mo.FirstOrDefault() == '<') _mo = NULL; else _mo = String.Concat("'", _mo, "'");
+            if (_cat.FirstOrDefault() == '<') _cat = NULL; else _cat = String.Concat("'", _cat, "'");
+            if (_age.Equals("")) _age = NULL;
+            if (_country.FirstOrDefault() == '<') _country = NULL; else _country = String.Concat("'", _country, "'");
+
+             string query = String.Concat("EXEC GetSTO ", _reg, ",", _distr, ",", _city, ",", _br, ",", _mo, ",", _cat, ",", _age, ",", _country, "");
             return CallSP(query);
         }
 
