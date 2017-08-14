@@ -50,8 +50,6 @@ E:\study\PREPARE_TO_BYTEPROTECT\proj\RepublicDatabaseAutoservice\RepublicDatabas
 E:\study\PREPARE_TO_BYTEPROTECT\proj\RepublicDatabaseAutoservice\RepublicDatabaseAutoservice\obj\Debug\RepublicDatabaseAutoservice.csprojResolveAssemblyReference.cache
 E:\study\PREPARE_TO_BYTEPROTECT\proj\RepublicDatabaseAutoservice\RepublicDatabaseAutoservice\obj\Debug\RepublicDatabaseAutoservice.dll
 E:\study\PREPARE_TO_BYTEPROTECT\proj\RepublicDatabaseAutoservice\RepublicDatabaseAutoservice\obj\Debug\RepublicDatabaseAutoservice.pdb
-E:\study\PREPARE_TO_BYTEPROTECT\proj\RDA\RepublicDatabaseAutoservice\obj\Debug\RepublicDatabaseAutoservice.csprojResolveAssemblyReference.cache
-E:\study\PREPARE_TO_BYTEPROTECT\proj\RDA\RepublicDatabaseAutoservice\obj\Debug\RepublicDatabaseAutoservice.dll
 E:\study\PREPARE_TO_BYTEPROTECT\proj\RDA\RepublicDatabaseAutoservice\bin\RepublicDatabaseAutoservice.dll.config
 E:\study\PREPARE_TO_BYTEPROTECT\proj\RDA\RepublicDatabaseAutoservice\bin\RepublicDatabaseAutoservice.dll
 E:\study\PREPARE_TO_BYTEPROTECT\proj\RDA\RepublicDatabaseAutoservice\bin\RepublicDatabaseAutoservice.pdb
@@ -101,4 +99,6 @@ E:\study\PREPARE_TO_BYTEPROTECT\proj\RDA\RepublicDatabaseAutoservice\bin\Microso
 E:\study\PREPARE_TO_BYTEPROTECT\proj\RDA\RepublicDatabaseAutoservice\bin\Microsoft.Owin.Security.Twitter.xml
 E:\study\PREPARE_TO_BYTEPROTECT\proj\RDA\RepublicDatabaseAutoservice\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\study\PREPARE_TO_BYTEPROTECT\proj\RDA\RepublicDatabaseAutoservice\bin\Microsoft.Owin.Security.OAuth.xml
+E:\study\PREPARE_TO_BYTEPROTECT\proj\RDA\RepublicDatabaseAutoservice\obj\Debug\RepublicDatabaseAutoservice.csprojResolveAssemblyReference.cache
+E:\study\PREPARE_TO_BYTEPROTECT\proj\RDA\RepublicDatabaseAutoservice\obj\Debug\RepublicDatabaseAutoservice.dll
 E:\study\PREPARE_TO_BYTEPROTECT\proj\RDA\RepublicDatabaseAutoservice\obj\Debug\RepublicDatabaseAutoservice.pdb
